@@ -26,8 +26,8 @@ class ApiService
      */
     private static function sendRequest($reference)
     {
-        $request = curl_init(env('DELIVEREA_API_URL', null) . $reference);
-        curl_setopt($request, CURLOPT_USERPWD, env('DELIVEREA_API_USER', null) . ":" . env('DELIVEREA_API_PASSWORD', null));
+        $request = curl_init(env('API_URL', null) . $reference);
+        curl_setopt($request, CURLOPT_USERPWD, env('API_USER', null) . ":" . env('API_PASSWORD', null));
         curl_setopt($request, CURLOPT_TIMEOUT, 30);
         curl_setopt($request, CURLOPT_RETURNTRANSFER, TRUE);
         $response = curl_exec($request);
